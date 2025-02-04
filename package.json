@@ -1,0 +1,28 @@
+{
+  "name": "agenciaviajes",
+  "version": "1.0.0",
+  "description": "Agencia de viajes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.js",
+    "dev": "nodemon index.js"
+  },
+  "type": "module",
+  "author": "Alvaro Gonzalez",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "moment": "^2.30.1",
+    "mysql2": "^3.12.0",
+    "nodemailer": "^6.9.16",
+    "pug": "^3.0.3",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
