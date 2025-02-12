@@ -12,3 +12,5 @@ export const Testimonial = db.define("testimoniales", {
         type: Sequelize.STRING
     },
 });
+
+Testimonial.sync({ alter: true }).catch(console.error);

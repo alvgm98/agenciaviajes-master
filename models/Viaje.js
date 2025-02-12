@@ -27,3 +27,5 @@ export const Viaje = db.define("viaje", {
         type: Sequelize.STRING
     },
 });
+
+Viaje.sync({ alter: true }).catch(console.error);

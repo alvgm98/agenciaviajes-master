@@ -31,5 +31,3 @@ export const Cliente = db.define('Cliente', {
 
 // Sincroniza la base de datos
 Cliente.sync({ alter: true }).catch(console.error);
-
-
