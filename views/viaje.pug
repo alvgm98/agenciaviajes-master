@@ -22,7 +22,6 @@ block contenido
                         path(d='M13.015 17h.005')
                         path(d='M7.01 17h.005')
                         path(d='M10.01 17h.005')
-                    // Aquí usamos `moment` para formatear la fecha
                     | #{moment(resultado.fecha_ida).format('DD/MM/YYYY')} - #{moment(resultado.fecha_vuelta).format('DD/MM/YYYY')}
                     p
                     svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' fill='none' stroke='red' stroke-linecap='round' stroke-linejoin='round' width='24' height='24' stroke-width='2')
@@ -37,3 +36,16 @@ block contenido
                     | #{resultado.precio} euros
 
                 p.text-justify=resultado.descripcion
+
+        // Sección de reviews
+        .row.mt-5
+            .col-12
+                h2.text-center.mb-3 Opiniones de viajeros
+            each review in reviews
+                .col-md-4.mb-4
+                    .card.shadow-sm.p-3
+                        h4.text-primary #{review.titulo}
+                        p.text-muted= review.descripcion
+                        p
+                            strong Puntuación: 
+                            | #{review.puntuacion} / 5

@@ -1,6 +1,7 @@
 import {Viaje} from "../models/Viaje.js";
 import {Testimonial} from "../models/Testimoniales.js";
 import {Cliente} from "../models/cliente.js";
+import {Review} from "../models/Review.js";
 import nodemailer from 'nodemailer';
 import moment from 'moment';
 
@@ -83,9 +84,11 @@ const paginaDetallesViajes = async (req, res) => {
     try{
         //Me traigo una sola columna y lo hago con un where donde coincida el slug
         const resultado = await Viaje.findOne({where: {slug: slug}});
+        const reviews = await Review.findAll({where: {viajeId: resultado.id}});
         res.render('viaje', {
             pagina: 'Información del Viaje',
             resultado: resultado,
+            reviews: reviews,
             moment: moment,
         })
     }catch (error){
