@@ -1,43 +1,57 @@
 # Agencia de Viajes
 
-Bienvenido a la **Agencia de Viajes**. Este es un proyecto web desarrollado con **Node.js**, **Express**, **Sequelize** y una base de datos **MySQL**. El objetivo del proyecto es ofrecer una plataforma para la gestión de viajes y clientes. Además, se utiliza **files.io** para almacenar y gestionar archivos.
+## Descripción del Proyecto
+Este es un proyecto desarrollado en Node.js con el motor de plantillas PUG, que simula una agencia de viajes. Permite a los usuarios explorar distintos destinos turísticos, visualizar detalles de los viajes disponibles y registrar compras. Además, cuenta con una sección de testimonios de clientes, proporcionando una experiencia más interactiva.
 
-### Enlace de la aplicación:
-[**Agencia de Viajes en producción**](https://agencia-de-viajes-msy1.onrender.com/)
+### Característica Adicional
+Como parte de una modificación solicitada en clase, se ha incorporado un nuevo modelo llamado **Review**, que permite a los usuarios dejar reseñas sobre los viajes. Estas reseñas se muestran en la página de cada destino, enriqueciendo la experiencia de los futuros viajeros.
 
 ---
 
-## Descripción
-
-Este proyecto es una **agencia de viajes en línea** que permite a los usuarios explorar, reservar y gestionar viajes. El sistema está estructurado con el patrón **Modelo-Vista-Controlador (MVC)**, que separa las responsabilidades en tres componentes principales:
-
-- **Modelo**: Interacción con la base de datos mediante **Sequelize**.
-- **Vista**: Páginas web renderizadas con **EJS**.
-- **Controlador**: Lógica de negocio que conecta el modelo con la vista.
-
-### Características
-
-- Registro y autenticación de usuarios.
-- Gestión de viajes, incluyendo la creación, edición y eliminación.
-- Almacenamiento de archivos con **files.io**.
-- Interfaz de usuario responsiva y amigable.
+### Proyecto Desplegado
+Puedes acceder a la versión en línea del proyecto aquí: [Agencia de Viajes](https://agencia-de-viajes-n5wb.onrender.com/)
 
 ---
 
 ## Tecnologías Utilizadas
-
-- **Node.js**: Entorno de ejecución para JavaScript del lado del servidor.
-- **Express**: Framework para aplicaciones web en Node.js.
-- **Sequelize**: ORM para interactuar con la base de datos **MySQL**.
-- **MySQL**: Base de datos relacional para almacenar la información de la agencia y los usuarios.
-- **files.io**: Para el manejo de archivos en la web.
-- **EJS**: Motor de plantillas para renderizar las vistas en HTML.
+- **Node.js** - Entorno de ejecución para JavaScript en el backend
+- **Express.js** - Framework para manejar rutas y peticiones HTTP
+- **PUG** - Motor de plantillas para la renderización del frontend
+- **Sequelize** - ORM para la gestión de la base de datos
+- **MySQL** - Base de datos utilizada para almacenar la información de los viajes, usuarios y reseñas
 
 ---
 
-## Instalación
+## Instalación y Configuración
+### Prerrequisitos
+Asegúrate de tener instalado:
+- [Node.js](https://nodejs.org/)
+- [MySQL](https://www.mysql.com/)
 
-1. Clona el repositorio:
+---
 
-   ```bash
-   git clone https://github.com/cronceroicloud/agenciaviajes.git
+## Estructura del Proyecto
+```
+📂 agencia-de-viajes
+ ├── 📁 config        # Configuración del proyecto
+ ├── 📁 controllers   # Controladores de lógica de negocio
+ ├── 📁 models        # Modelos de Sequelize
+ ├── 📁 public        # Archivos estáticos (CSS, JS, imágenes)
+ ├── 📁 routers       # Definición de rutas
+ ├── 📁 views         # Plantillas PUG
+ ├── 📄 .gitignore    # Archivos y carpetas ignorados por Git
+ ├── 📄 README.md     # Documentación del proyecto
+ ├── 📄 index.js      # Archivo principal del servidor
+ ├── 📄 package-lock.json # Dependencias bloqueadas
+ ├── 📄 package.json  # Dependencias y configuración
+```
+
+---
+
+## Funcionalidades Principales
+✅ Listado de viajes disponibles con detalles
+✅ Visualización de información detallada de cada destino
+✅ Registro de compras de viajes
+✅ Sección de testimonios de clientes
+✅ **Nuevo:** Sistema de reseñas para cada viaje
+
