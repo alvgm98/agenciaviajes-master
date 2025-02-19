@@ -39,13 +39,37 @@ block contenido
 
         // Sección de reviews
         .row.mt-5
-            .col-12
-                h2.text-center.mb-3 Opiniones de viajeros
+            .col-12.text-center
+                h2.mb-3 Opiniones de viajeros
+                button.btn.btn-primary.mb-3(onclick='document.getElementById("review-form").classList.toggle("d-none")') Añadir Review
+            #review-form.col-12.d-none
+                hr
+                form(action='/review' method='POST')
+                    input(type='hidden' name='viajeSlug' value=resultado.slug)
+                    input(type='hidden' name='viajeId' value=resultado.id)
+                    .mb-3
+                        label.form-label(for='usuario') Usuario
+                        input.form-control(type='text' name='usuario' required)
+                    .mb-3
+                        label.form-label(for='titulo') Título
+                        input.form-control(type='text' name='titulo' required)
+                    .mb-3
+                        label.form-label(for='descripcion') Descripción
+                        textarea.form-control(name='descripcion' rows='3' required)
+                    .mb-3
+                        label.form-label(for='puntuacion') Puntuación
+                        input.form-control(type='number' name='puntuacion' min='1' max='5' required)
+                    .text-center
+                        button.btn.btn-success.w-25.btn-sm(type='submit') Enviar
+                hr
             each review in reviews
                 .col-md-4.mb-4
                     .card.shadow-sm.p-3
                         h4.text-primary #{review.titulo}
                         p.text-muted= review.descripcion
+                        p
+                            strong Usuario: 
+                            | #{review.usuario}
                         p
                             strong Puntuación: 
                             | #{review.puntuacion} / 5
